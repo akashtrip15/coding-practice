@@ -4,10 +4,7 @@ class Solution {
         if(n==0 || n==1){
             return false;
         }
-       Set<Integer> set = new HashSet<>();
-        for(int i=0; i<n; i++){
-            set.add(nums[i]);
-        }
+      Set<Integer> set = new HashSet<>(Arrays.stream(nums).boxed().collect(Collectors.toSet()));	
         if(n==set.size()){
             return false;
         }else{
